@@ -26,7 +26,7 @@
         - name: Artifact upload-Kar
           uses: actions/upload-pages-artifact@v3
           with:
-            name: github-pages-Kar
+            name: github-pages
             path: frontend/angular/dist/angular/browser
       
     deploy:
