@@ -1,0 +1,37 @@
+  name: prueba de Deploy
+  on:
+    push:
+      branches: ["main"]
+  
+  jobs:
+    build:
+      runs-on: ubuntu-latest
+      steps:
+        - name: Checkout code-Kar
+          uses: actions/checkout@v4
+
+        - name: Setup Node-Kar
+          uses: actions/setup-node@v4
+
+        - name: Install Dependencies-Kar
+          run: npm install
+
+        - name: Build-Kar
+          run: npm run build
+
+        - name: Artifact upload-Kar
+          uses: actions/upload-pages-artifact@v3
+          with:
+            name: github-pages-Kar
+            path: frontend/angular/dist/angular/browser
+      
+    deploy:
+      needs: build
+      permissions:
+        pages: write
+        id-token: write
+      runs-on: ubuntu-latest
+      steps:
+        - name: Deploy to Github-Kar
+          id: deployment
+          uses: actions/deploy-pages@v4   
