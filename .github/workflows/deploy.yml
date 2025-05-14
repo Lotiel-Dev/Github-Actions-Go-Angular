@@ -20,7 +20,7 @@
           working-directory: frontend/angular #darle la ruta del directorio de package.json
 
         - name: Build-Kar
-          run: npm run build -- --base-href /Github-Actions-Go-Angular/
+          run: npm run build -- --base-href /Github-Actions-Go-Angular/ #RECORDAR poner el nombre del repositorio
           working-directory: frontend/angular #darle la ruta del directorio de package.json
 
         - name: Artifact upload-Kar
